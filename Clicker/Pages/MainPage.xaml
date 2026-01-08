@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clicker.Pages.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="Auto,Auto,*">
+                <Label x:Name="IlosCiastek" Grid.Column="0" Margin="10,0,0,0"/>
+                <Label Text="COOKIES" Grid.Column="1"/>
+                <Label Text="/s" x:Name="IloscSec" Grid.Column="2" HorizontalOptions="End" Margin="0,0,10,0"/>
+            </Grid>
+
+            <ImageButton x:Name="BreathButton" Clicked="OnBreathClicked" Source="fnaf.png" WidthRequest="1600" HeightRequest="500"/>
+
+            <Label Text="Power-ups:" HorizontalOptions="Center"/>
+            <Grid ColumnDefinitions="*,*,*,*">
+                <ImageButton Source="dotnet_bot.png" x:Name="Powerup1Button" Grid.Column="0" Margin="100,0,40,0" WidthRequest="100"/>
+                <ImageButton Source="dotnet_bot.png" x:Name="Powerup2Button" Grid.Column="1" Margin="20,0,0,0" WidthRequest="100"/>
+                <ImageButton Source="dotnet_bot.png" x:Name="Powerup3Button" Grid.Column="2" Margin="0,0,20,0" WidthRequest="100"/>
+                <ImageButton Source="dotnet_bot.png" x:Name="Powerup4Button" Grid.Column="3" Margin="40,0,100,0" WidthRequest="100"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

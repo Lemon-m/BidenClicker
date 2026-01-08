@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clicker.Pages.ProfilePage"
+             Title="Profile">
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions="*,*,*,Auto,Auto">
+            <Button Text="Sign In" Grid.Column="3"/>
+            <Button Text="Log In" Grid.Column="4"/>
+        </Grid>
+        <Label Text="Profil" FontSize="Large" HorizontalOptions="Center"/>
+
+        <VerticalStackLayout x:Name="Konto" BackgroundColor="DarkBlue">
+
+            <Grid ColumnDefinitions="*,Auto,Auto,*">
+                <Label Text="Użytkownik: " FontSize="40" Grid.Column="1"/>
+                <Label Text=" ?" x:Name="NickLabel" FontSize="40" Grid.Column="2"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,Auto,Auto,*">
+                <Label Text="Poziom: " FontSize="15" Grid.Column="1"/>
+                <Label Text=" ?" x:Name="LvlLabel" FontSize="15" Grid.Column="2"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,Auto,Auto,*">
+                <Label Text="Cookies: " FontSize="15" Grid.Column="1"/>
+                <Label Text=" ?" x:Name="CookiesLabel" FontSize="15" Grid.Column="2"/>
+            </Grid>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
