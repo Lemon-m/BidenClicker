@@ -1,26 +1,150 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Clicker.Pages.MainPage">
+             x:Class="Clicker.Pages.MainPage"
+             BackgroundColor="#1E1E1E">
 
     <ScrollView>
-        <VerticalStackLayout>
-            <Grid ColumnDefinitions="Auto,Auto,*">
-                <Label x:Name="IlosCiastek" Grid.Column="0" Margin="10,0,0,0"/>
-                <Label Text="COOKIES" Grid.Column="1"/>
-                <Label Text="/s" x:Name="IloscSec" Grid.Column="2" HorizontalOptions="End" Margin="0,0,10,0"/>
+        <VerticalStackLayout Spacing="20" Padding="16">
+
+            <!--HEADER-->
+            <Grid ColumnDefinitions="Auto,*,Auto"
+                  VerticalOptions="Center">
+
+                <Label x:Name="IlosCiastek"
+                       Text="0"
+                       FontSize="20"
+                       TextColor="White"
+                       FontAttributes="Bold"/>
+
+                <Label Text="COOKIES"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="18"
+                       TextColor="#BBBBBB"/>
+
+                <Label x:Name="IloscSec"
+                       Text="0 /s"
+                       Grid.Column="2"
+                       FontSize="14"
+                       TextColor="#AAAAAA"
+                       HorizontalOptions="End"/>
             </Grid>
 
-            <ImageButton x:Name="BreathButton" Clicked="OnBreathClicked" Source="fnaf.png" WidthRequest="1600" HeightRequest="500"/>
+            <!--Biden Button-->
+            <Frame CornerRadius="20"
+                   Padding="0"
+                   HasShadow="True"
+                   BackgroundColor="#000000">
 
-            <Label Text="Power-ups:" HorizontalOptions="Center"/>
-            <Grid ColumnDefinitions="*,*,*,*">
-                <ImageButton Source="dotnet_bot.png" x:Name="Powerup1Button" Grid.Column="0" Margin="100,0,40,0" WidthRequest="100"/>
-                <ImageButton Source="dotnet_bot.png" x:Name="Powerup2Button" Grid.Column="1" Margin="20,0,0,0" WidthRequest="100"/>
-                <ImageButton Source="dotnet_bot.png" x:Name="Powerup3Button" Grid.Column="2" Margin="0,0,20,0" WidthRequest="100"/>
-                <ImageButton Source="dotnet_bot.png" x:Name="Powerup4Button" Grid.Column="3" Margin="40,0,100,0" WidthRequest="100"/>
+                <ImageButton x:Name="BreathButton"
+                             Clicked="OnBreathClicked"
+                             Source="fnaf.png"
+                             Aspect="AspectFill"
+                             HeightRequest="260"
+                             BackgroundColor="Transparent"/>
+            </Frame>
+
+            <!--Powerups-->
+
+            <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="12">
+
+                <!-- POWERUP 1 -->
+                <Frame Grid.Column="0" CornerRadius="16" BackgroundColor="#2A2A2A">
+                    <Grid>
+                        <ImageButton x:Name="Powerup1Button"
+                         Source="dotnet_bot.png"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         BackgroundColor="Transparent"
+                         Clicked="OnPowerup1Clicked"/>
+
+                        <Grid x:Name="Powerup1Cooldown"
+                  IsVisible="False"
+                  BackgroundColor="#AA000000">
+                            <Label x:Name="Powerup1CooldownText"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <!-- POWERUP 2 -->
+                <Frame Grid.Column="1" CornerRadius="16" BackgroundColor="#2A2A2A">
+                    <Grid>
+                        <ImageButton x:Name="Powerup2Button"
+                         Source="dotnet_bot.png"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         BackgroundColor="Transparent"
+                         Clicked="OnPowerup2Clicked"/>
+
+                        <Grid x:Name="Powerup2Cooldown"
+                  IsVisible="False"
+                  BackgroundColor="#AA000000">
+                            <Label x:Name="Powerup2CooldownText"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <!-- POWERUP 3 -->
+                <Frame Grid.Column="2" CornerRadius="16" BackgroundColor="#2A2A2A">
+                    <Grid>
+                        <ImageButton x:Name="Powerup3Button"
+                         Source="dotnet_bot.png"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         BackgroundColor="Transparent"
+                         Clicked="OnPowerup3Clicked"/>
+
+                        <Grid x:Name="Powerup3Cooldown"
+                  IsVisible="False"
+                  BackgroundColor="#AA000000">
+                            <Label x:Name="Powerup3CooldownText"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <!-- POWERUP 4 -->
+                <Frame Grid.Column="3" CornerRadius="16" BackgroundColor="#2A2A2A">
+                    <Grid>
+                        <ImageButton x:Name="Powerup4Button"
+                         Source="dotnet_bot.png"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         BackgroundColor="Transparent"
+                         Clicked="OnPowerup4Clicked"/>
+
+                        <Grid x:Name="Powerup4Cooldown"
+                  IsVisible="False"
+                  BackgroundColor="#AA000000">
+                            <Label x:Name="Powerup4CooldownText"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
             </Grid>
+
+
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
